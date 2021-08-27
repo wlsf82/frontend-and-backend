@@ -1,0 +1,34 @@
+{
+  "name": "frontend-and-backend",
+  "version": "1.0.0",
+  "description": "Sample project with basic 'backend' and frontend running Cypress tests on GitHub Actions.",
+  "scripts": {
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd backend && npm install",
+    "start:frontend": "cd frontend && npm start",
+    "start:server": "cd backend && npm start",
+    "test:frontend:unit": "cd frontend && npm test",
+    "test:frontend": "cypress run --spec cypress/integration/ui/customer.spec.js",
+    "test:frontend:with:server": "start-server-and-test start:frontend 3000 test:frontend",
+    "test:api": "cypress run --spec cypress/integration/api/customer.spec.js",
+    "test:api:with:servers": "start-server-and-test  start:frontend 3000 start:server 3000 test:api",
+    "cy:open": "cypress open",
+    "cy:open:with:servers": "start-server-and-test start:frontend 3000 start:server 3000 cy:open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wlsf82/frontend-and-backend.git"
+  },
+  "keywords": [
+    "Cypress.io",
+    "API testing",
+    "Frontend testing"
+  ],
+  "author": "Walmyr Filho <wlsf82@gmail.com> (https://walmyr.dev)",
+  "license": "MIT",
+  "homepage": "https://github.com/wlsf82/frontend-and-backend#readme",
+  "devDependencies": {
+    "cypress": "^8.3.1",
+    "start-server-and-test": "^1.13.1"
+  }
+}

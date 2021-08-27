@@ -1,0 +1,15 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/frontend/node_modules
+/backend/node_modules
+/build
+/dist
+
+# cypress
+/cypress/screenshots
+/cypress/videos
+/node_modules
+
+# misc
+.DS_Store

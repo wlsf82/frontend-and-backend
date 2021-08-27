@@ -1,0 +1,42 @@
+{
+  "name": "John Doe",
+  "timestamp": "Wed Aug 25 2021",
+  "customers": [
+    {
+      "id": 1,
+      "name": "Customer One",
+      "employees": 100,
+      "size": "Small",
+      "contactInfo": {
+        "email": "customer@one.com",
+        "name": "Greg H."
+      }
+    },
+    {
+      "id": 2,
+      "name": "Customer Two",
+      "employees": 101,
+      "size": "Medium",
+      "contactInfo": {
+        "email": "customer@two.com",
+        "name": "Zeff A."
+      }
+    },
+    {
+      "id": 3,
+      "name": "Customer Three",
+      "employees": 1000,
+      "size": "Medium",
+      "contactInfo": {
+        "email": "customer@three.com",
+        "name": "Alfred B."
+      }
+    },
+    {
+      "id": 4,
+      "name": "Customer Four",
+      "employees": 1001,
+      "size": "Big"
+    }
+  ]
+}

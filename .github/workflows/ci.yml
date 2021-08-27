@@ -1,0 +1,65 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  frontend-unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install frontend modules
+      run: npm run install:frontend
+    - name: Run frontend unit tests 🧪
+      run: npm run test:frontend:unit
+  api-tests:
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node12.18.3-chrome87-ff82
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Backend modules
+        uses: cypress-io/github-action@v2
+        with:
+          install-command: npm run install:backend
+          runTests: false
+      - name: Install Frontend modules
+        uses: cypress-io/github-action@v2
+        with:
+          install-command: npm run install:frontend
+          runTests: false
+      - name: Install Cypress
+        uses: cypress-io/github-action@v2
+        with:
+          runTests: false
+      - name: Run API tests 🧪
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          start: npm run start:frontend, npm run start:server
+          command: npm run test:api
+  frontend-tests:
+    needs: frontend-unit-tests
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node12.18.3-chrome87-ff82
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Frontend modules
+        uses: cypress-io/github-action@v2
+        with:
+          install-command: npm run install:frontend
+          runTests: false
+      - name: Install Cypress
+        uses: cypress-io/github-action@v2
+        with:
+          runTests: false
+      - name: Run Frontend UI tests 🧪
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          start: npm run start:frontend
+          command: npm run test:frontend

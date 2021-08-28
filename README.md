@@ -26,15 +26,21 @@ After cloning this project, to install the dev dependencies, run `npm install` (
 
 Run `npm run test:frontend:unit` to run the frontend unit tests.
 
-Run `npm run test:api:with:servers` to run the API tests. **Note:** This script starts the required servers before-hand, and shuts them down when tests finish running.
+Run `npm run test:api:with:servers` to run the API tests.
 
-Run `npm run test:frontend:with:server` to run the UI tests in headless mode. **Note:** This script starts the frontend server before-hand, and shuts it down when tests finish running.
+> **Note:** This script starts the required servers before-hand, and shuts them down when tests finish running.
 
-> Note: When running in headless mode, Cypress automatically saves videos of the executions at `cypress/videos/`, and if tests fail, Cypress automatically saves screenshots of the failures at `cypress/screenshots/`.
+Run `npm run test:frontend:with:server` to run the UI tests in headless mode.
+
+> **Note 2:** This script starts the frontend server before-hand, and shuts it down when tests finish running.
+>
+> **Note 3:** When running in headless mode, Cypress automatically saves videos of the executions at `cypress/videos/`, and if tests fail, Cypress automatically saves screenshots of the failures at `cypress/screenshots/`.
 
 ### Interactive mode
 
-1. Run `npm run cy:open:with:servers` to open the Cypress Test Runner to run tests in interactive mode. **Note:** This script starts the required servers before-hand, and shuts them down after the runner is closed.
+1. Run `npm run cy:open:with:servers` to open the Cypress Test Runner to run tests in interactive mode.
+
+> **Note 4:** This script starts the required servers before-hand, and shuts them down after the runner is closed.
 2. With the test runner is opened, click on the test file you want to test, or run them all.
 
 ___

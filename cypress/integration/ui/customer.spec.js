@@ -30,6 +30,7 @@ describe('Customers App UI', () => {
       cy.get('input[type="button"][value="Submit"]').click()
 
       cy.contains(`Hi ${salesRepresentative}. It is now Wed Aug 25 2021 and here is our customer list. Click on each of them to view their contact details.`)
+        .should('be.visible')
       cy.get('table')
         .should('be.visible')
         .and('contain', 'Name')
@@ -48,6 +49,7 @@ describe('Customers App UI', () => {
     context('Customer List Screen', () => {
       it('greets and shows a table with headers and five rows', () => {
         cy.contains(`Hi ${salesRepresentative}. It is now Wed Aug 25 2021 and here is our customer list. Click on each of them to view their contact details.`)
+          .should('be.visible')
         cy.get('table').as('table')
           .should('be.visible')
           .find('thead')
@@ -63,15 +65,19 @@ describe('Customers App UI', () => {
           .find('tbody tr').as('tableRows')
           .eq(0)
           .should('contain', 'Small')
+          .and('be.visible')
         cy.get('@tableRows')
           .eq(1)
           .should('contain', 'Medium')
+          .and('be.visible')
         cy.get('@tableRows')
           .eq(2)
           .should('contain', 'Medium')
+          .and('be.visible')
         cy.get('@tableRows')
           .eq(3)
           .should('contain', 'Big')
+          .and('be.visible')
       })
     })
 

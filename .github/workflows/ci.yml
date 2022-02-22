@@ -31,10 +31,6 @@ jobs:
         with:
           install-command: npm run install:frontend
           runTests: false
-      - name: Install Cypress
-        uses: cypress-io/github-action@v2
-        with:
-          runTests: false
       - name: Run API tests 🧪
         uses: cypress-io/github-action@v2
         with:
@@ -52,10 +48,6 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           install-command: npm run install:frontend
-          runTests: false
-      - name: Install Cypress
-        uses: cypress-io/github-action@v2
-        with:
           runTests: false
       - name: Run Frontend UI tests 🧪
         uses: cypress-io/github-action@v2

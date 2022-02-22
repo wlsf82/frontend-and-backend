@@ -41,7 +41,7 @@ Run `npm run test:frontend:with:server` to run the UI tests in headless mode.
 1. Run `npm run cy:open:with:servers` to open the Cypress Test Runner to run tests in interactive mode.
 
 > **Note 4:** This script starts the required servers before-hand, and shuts them down after the runner is closed.
-2. With the test runner is opened, click on the test file you want to test, or run them all.
+2. With the test runner opened, click on the test file you want to test, or run them all.
 
 ___
 

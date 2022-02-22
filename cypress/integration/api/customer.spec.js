@@ -4,8 +4,11 @@ describe('Customers App API', function() {
 
   context('POST', function() {
     beforeEach(function() {
-      cy.request('POST', Cypress.env('API_URL'), { name: salesRepresentative })
-        .as('postRes')
+      cy.request(
+        'POST',
+        Cypress.env('API_URL'),
+        { name: salesRepresentative }
+      ).as('postRes')
     })
 
     it('returns a 200 status code', function() {

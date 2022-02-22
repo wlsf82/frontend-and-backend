@@ -23,7 +23,7 @@ const database = {
 };
 
 const getSize = (customer) => {
-    return customer.employees <= 100 ? "Small" : customer.employees <= 1000 ? "Medium" : "Big";
+    return customer.employees < 100 ? "Small" : customer.employees <= 1000 ? "Medium" : "Big";
 }
 
 app.post('/', (req, res) => {

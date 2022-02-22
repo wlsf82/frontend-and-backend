@@ -5,14 +5,11 @@ describe('Customers App UI', () => {
     // For all tests, I'm mocking the API response.
     // The idea is just check that the frontend correctly renders what the API provides.
     cy.intercept('POST', Cypress.env('API_URL'), { fixture: 'customers' })
-      .as('postReq')
     cy.visit('/')
   })
 
   context('Welcome Screen', () => {
     it('shows h1, paragraph, text input field, and submit button', () => {
-      cy.contains('h1', 'Welcome to Customer App').should('be.visible')
-      cy.contains('p', 'Please provide your name:').should('be.visible')
       cy.get('input[type="text"]').should('be.visible')
       cy.get('input[type="button"][value="Submit"]').should('be.visible')
     })
@@ -47,7 +44,7 @@ describe('Customers App UI', () => {
     })
 
     context('Customer List Screen', () => {
-      it('greets and shows a table with headers and five rows', () => {
+      it('greets and shows a table with headers and four rows', () => {
         cy.contains(`Hi ${salesRepresentative}. It is now Wed Aug 25 2021 and here is our customer list. Click on each of them to view their contact details.`)
           .should('be.visible')
         cy.get('table').as('table')

@@ -33,11 +33,11 @@ describe('Customers App API', function() {
 
       customers.forEach((customer) => {
         if (customer.employees <= 100) {
-          expect(customer.size).to.equal('Small')
+          expect(customer.size).to.equal('Small', `Customer id: ${customer.id} - small`)
         } else if (customer.employees <= 1000) {
-          expect(customer.size).to.equal('Medium')
+          expect(customer.size).to.equal('Medium', `Customer id: ${customer.id} - Medium`)
         } else {
-          expect(customer.size).to.equal('Big')
+          expect(customer.size).to.equal('Big', `Customer id: ${customer.id} - BIG`)
         }
       })
     })
@@ -49,6 +49,7 @@ describe('Customers App API', function() {
       expect(customers[1].contactInfo).to.exist
       expect(customers[2].contactInfo).to.exist
       expect(customers[4].contactInfo).to.exist
+      expect(customers[5].contactInfo).to.exist
     })
 
     it('doesn\'t return customer\'s contact info if there\'s none', function() {

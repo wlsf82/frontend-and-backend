@@ -27,7 +27,7 @@ const getSize = (customer) => {
 }
 
 app.post('/', (req, res) => {
-    const name = req.body.name;
+    const { name } = req.body;
     const response = {
         name, 
         timestamp: (new Date()).toDateString(),

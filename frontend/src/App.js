@@ -82,7 +82,7 @@ class CustomerApp extends Component {
                 <p><b>Size:</b> {this.state.customer.size}</p>
                 { this.state.customer.contactInfo ?
                   <p><b>Contact:</b> {this.state.customer.contactInfo.name} ({this.state.customer.contactInfo.email})</p> :
-                  <p>No contact info available</p>
+                  {/* <p>No contact info available</p> */}
                 }
                 <input type="button" value="Back to the list" onClick={() => this.setState({customer: null})}/>
               </div>

@@ -34,7 +34,6 @@ jobs:
       - name: Run API tests 🧪
         uses: cypress-io/github-action@v2
         with:
-          install: false
           start: npm run start:frontend, npm run start:server
           command: npm run test:api
   frontend-tests:
@@ -52,6 +51,5 @@ jobs:
       - name: Run Frontend UI tests 🧪
         uses: cypress-io/github-action@v2
         with:
-          install: false
           start: npm run start:frontend
           command: npm run test:frontend

@@ -21,8 +21,11 @@ input {
   font-size: larger;
 }
 
-input[type="button"] {
+input[value="Submit"] {
   margin-left: 5px;
+}
+
+input[type="button"] {
   background-color: #f9bc60;
   padding-left: 10px;
   padding-right: 10px;

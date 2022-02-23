@@ -77,7 +77,8 @@ class CustomerApp extends Component {
             }
             { this.state.customer &&
               <div>
-                <p><b>Customer Details</b></p>
+                <hr></hr>
+                <p><b><em>Customer Details</em></b></p>
                 <p><b>Name:</b> {this.state.customer.name}</p>
                 <p><b># of Employees:</b> {this.state.customer.employees}</p>
                 <p><b>Size:</b> {this.state.customer.size}</p>

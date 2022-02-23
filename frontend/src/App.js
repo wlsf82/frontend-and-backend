@@ -44,8 +44,8 @@ class CustomerApp extends Component {
           <div>
             <p>Please provide your name:</p>
             <p>
-              <input type="text" id="name"/>
-              <input type="button" value="Submit" onClick={this.getCustomers.bind(this)}/>
+              <input type="text" id="name" data-testid="name" />
+              <input type="button" value="Submit" data-testid="submit-btn" onClick={this.getCustomers.bind(this)}/>
             </p>
           </div>
         }

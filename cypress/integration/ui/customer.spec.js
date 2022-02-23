@@ -13,11 +13,6 @@ describe('Customers App UI', () => {
   })
 
   context('Welcome Screen', () => {
-    it('shows h1, paragraph, text input field, and submit button', () => {
-      cy.get('input[type="text"]').should('be.visible')
-      cy.get('input[type="button"][value="Submit"]').should('be.visible')
-    })
-
     it('alerts when no name is provided', () => {
       cy.get('input[type="button"][value="Submit"]').click()
 

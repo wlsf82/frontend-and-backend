@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 
-const serverPort = 3001; 
-const serverURL = `http://localhost:${serverPort}/`;
-
 class CustomerApp extends Component {
   constructor() {
     super();
@@ -20,23 +17,54 @@ class CustomerApp extends Component {
 
   async getCustomers(){
     const userName = document.getElementById("name").value;
+
     if(!userName || userName === ""){
       alert("Please provide your name");
       return;
     }
 
-    const axios = require('axios');
-    const server = axios.create({
-      baseURL: serverURL
+    this.setState({
+      name:userName,
+      timestamp: (new Date()).toDateString(),
+      customers: [
+        {
+          "id": 1,
+          "name": "Customer One",
+          "employees": 100,
+          "size": "Small",
+          "contactInfo": {
+            "email": "customer@one.com",
+            "name": "Greg H."
+          }
+        },
+        {
+          "id": 2,
+          "name": "Customer Two",
+          "employees": 101,
+          "size": "Medium",
+          "contactInfo": {
+            "email": "customer@two.com",
+            "name": "Zeff A."
+          }
+        },
+        {
+          "id": 3,
+          "name": "Customer Three",
+          "employees": 1000,
+          "size": "Medium",
+          "contactInfo": {
+            "email": "customer@three.com",
+            "name": "Alfred B."
+          }
+        },
+        {
+          "id": 4,
+          "name": "Customer Four",
+          "employees": 1001,
+          "size": "Big"
+        }
+      ]
     });
-
-    try {
-      const response = await server.post('/', { name: userName });
-      const { name, timestamp, customers } = response.data;
-      this.setState({name, timestamp, customers });
-    } catch (error) {
-      alert(error);
-    }
   }
 
   render() {

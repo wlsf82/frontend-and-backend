@@ -14,7 +14,7 @@ describe('Customers App UI', () => {
 
   context('Welcome Screen', () => {
     it('alerts when no name is provided', () => {
-      cy.get('input[type="button"][value="Submit"]').click()
+      cy.get('[data-testid="submit-btn"]').click()
 
       cy.on('window:alert', alert => {
         expect(alert).to.equal('Please provide your name')
@@ -22,8 +22,8 @@ describe('Customers App UI', () => {
     })
 
     it('directs the user to the Customer List Screen', () => {
-      cy.get('input[type="text"]').type(salesRepresentative)
-      cy.get('input[type="button"][value="Submit"]').click()
+      cy.get('[data-testid="name"]').type(salesRepresentative)
+      cy.get('[data-testid="submit-btn"]').click()
 
       cy.contains(`Hi ${salesRepresentative}. It is now Wed Aug 25 2021 and here is our customer list. Click on each of them to view their contact details.`)
         .should('be.visible')
@@ -38,8 +38,8 @@ describe('Customers App UI', () => {
 
   context('Fill in the text field and submit', () => {
     beforeEach(() => {
-      cy.get('input[type="text"]').type(salesRepresentative)
-      cy.get('input[type="button"][value="Submit"]').click()
+      cy.get('[data-testid="name"]').type(salesRepresentative)
+      cy.get('[data-testid="submit-btn"]').click()
     })
 
     context('Customer List Screen', () => {

@@ -51,9 +51,10 @@ class CustomerApp extends Component {
         }
         { this.state.name && 
           <div>
-            <p>Hi <b>{this.state.name}</b>. It is now <b>{this.state.timestamp}</b> and here is our customer list. Click on each of them to view their contact details.</p>
+            <p>Hi <b>{this.state.name}</b>. It is now <b>{this.state.timestamp}</b> and here is our customer list.</p>
             { !this.state.customer &&
             <div>
+              <p>Click on each of them to view their contact details.</p>
               <table border="1">
                 <thead>
                   <tr>

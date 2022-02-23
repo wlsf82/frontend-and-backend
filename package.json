@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Sample project with basic 'backend' and frontend running Cypress tests on GitHub Actions.",
   "scripts": {
+    "build:frontend": "CI=false && npm run install:frontend && npm run build",
     "install:frontend": "cd frontend && npm install",
     "install:backend": "cd backend && npm install",
-    "start:frontend": "cd frontend && npm start",
+    "start:frontend": "CI=false && cd frontend && npm start",
     "start:server": "cd backend && npm start",
     "test:frontend:unit": "cd frontend && npm test",
     "test:frontend": "cypress run --spec cypress/integration/ui/customer.spec.js",

@@ -4,7 +4,11 @@ describe('Customers App UI', () => {
   beforeEach(() => {
     // For all tests, I'm mocking the API response.
     // The idea is just check that the frontend correctly renders what the API provides.
-    cy.intercept('POST', Cypress.env('API_URL'), { fixture: 'customers' })
+    cy.intercept(
+      'POST',
+      Cypress.env('API_URL'),
+      { fixture: 'customers' }
+    )
     cy.visit('/')
   })
 

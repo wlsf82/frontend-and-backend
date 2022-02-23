@@ -25,7 +25,9 @@ describe('Customers App UI', () => {
       cy.get('[data-testid="name"]').type(salesRepresentative)
       cy.get('[data-testid="submit-btn"]').click()
 
-      cy.contains(`Hi ${salesRepresentative}. It is now Wed Aug 25 2021 and here is our customer list. Click on each of them to view their contact details.`)
+      cy.contains(`Hi ${salesRepresentative}. It is now Wed Aug 25 2021 and here is our customer list.`)
+        .should('be.visible')
+      cy.contains('Click on each of them to view their contact details.')
         .should('be.visible')
       cy.get('table')
         .should('be.visible')
@@ -44,7 +46,9 @@ describe('Customers App UI', () => {
 
     context('Customer List Screen', () => {
       it('greets and shows a table with headers and four rows', () => {
-        cy.contains(`Hi ${salesRepresentative}. It is now Wed Aug 25 2021 and here is our customer list. Click on each of them to view their contact details.`)
+        cy.contains(`Hi ${salesRepresentative}. It is now Wed Aug 25 2021 and here is our customer list.`)
+          .should('be.visible')
+        cy.contains('Click on each of them to view their contact details.')
           .should('be.visible')
         cy.get('table').as('table')
           .should('be.visible')

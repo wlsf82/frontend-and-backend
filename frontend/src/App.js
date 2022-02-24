@@ -45,10 +45,8 @@ class CustomerApp extends Component {
         { !this.state.name &&
           <div>
             <p>Please provide your name:</p>
-            <p>
-              <input type="text" id="name" data-testid="name" />
-              <input type="button" value="Submit" data-testid="submit-btn" onClick={this.getCustomers.bind(this)}/>
-            </p>
+            <input type="text" id="name" data-testid="name" />
+            <input type="button" value="Submit" data-testid="submit-btn" onClick={this.getCustomers.bind(this)}/>
           </div>
         }
         { this.state.name && 

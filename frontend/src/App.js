@@ -64,7 +64,7 @@ class CustomerApp extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  { this.state.customers.map(customer => 
+                  { this.state.customers.forEach(customer => 
                     <tr key={customer.id}>
                       <td><a href="#" onClick={() => this.getCustomer(customer)}>{customer.name}</a></td>
                       <td>{customer.employees}</td>

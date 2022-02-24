@@ -4,7 +4,6 @@ const serverPort = 3001;
 const serverURL = `http://localhost:${serverPort}/`;
 
 class CustomerApp extends Component {
-
   state = {
     name: null,
     timestamp: null,

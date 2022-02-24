@@ -5,12 +5,13 @@ const serverURL = `http://localhost:${serverPort}/`;
 
 class CustomerApp extends Component {
   constructor() {
+    super();
     this.state = {
       name: null,
       timestamp: null,
       customers: null,
       customer: null
-    }
+    };
   }
 
   async getCustomer(customer){

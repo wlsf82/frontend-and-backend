@@ -4,12 +4,14 @@ const serverPort = 3001;
 const serverURL = `http://localhost:${serverPort}/`;
 
 class CustomerApp extends Component {
-  state = {
-    name: null,
-    timestamp: null,
-    customers: null,
-    customer: null
-  };
+  constructor() {
+    this.state = {
+      name: null,
+      timestamp: null,
+      customers: null,
+      customer: null
+    }
+  }
 
   async getCustomer(customer){
     this.setState({customer})

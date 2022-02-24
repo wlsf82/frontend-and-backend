@@ -1,7 +1,7 @@
 const port = 3001;
 const express = require('express')
-var bodyParser = require("body-parser");
-var app = express();
+const bodyParser = require("body-parser");
+const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

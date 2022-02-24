@@ -90,7 +90,6 @@ class CustomerApp extends Component {
             }
           </div>
         }
-        
       </div>
     )
   }

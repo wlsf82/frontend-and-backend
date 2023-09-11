@@ -20,7 +20,7 @@ npm install
 npm start
 ```
 
-The server will be listening on port 3001. If you need to change this, go to /backend/server.js and change the port variable value in the first line.
+The server will be listening on port 3001. If you need to change this, go to `/backend/server.js` and change the port variable value in the first line.
 
 ```js
 const port = 3001;
@@ -30,7 +30,7 @@ const port = 3001;
 
 Open a new terminal, go to the root of this repo and:
 
-**Important:** if you changed the backend port number, you will have to change it also on /frontend/src/App.js, on line 3, before starting the frontend.
+**Important:** if you changed the backend port number, you will have to change it also on `/frontend/src/App.js`, on line 3, before starting the frontend.
 
 ```sh
 cd frontend
@@ -38,4 +38,4 @@ npm install
 npm start
 ```
 
-Go to a web browser and open http://localhost:3000/
+Go to a web browser and open `http://localhost:3000/`.

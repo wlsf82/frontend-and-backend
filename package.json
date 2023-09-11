@@ -8,9 +8,9 @@
     "start:frontend": "cd frontend && npm start",
     "start:server": "cd backend && npm start",
     "test:frontend:unit": "cd frontend && npm test",
-    "test:frontend": "cypress run --spec cypress/integration/ui/customer.spec.js",
+    "test:frontend": "cypress run --spec cypress/e2e/ui/customer.cy.js",
     "test:frontend:with:server": "start-server-and-test start:frontend 3000 test:frontend",
-    "test:api": "cypress run --spec cypress/integration/api/customer.spec.js",
+    "test:api": "cypress run --spec cypress/e2e/api/customer.cy.js",
     "test:api:with:servers": "start-server-and-test  start:frontend 3000 start:server 3000 test:api",
     "cy:open": "cypress open",
     "cy:open:with:servers": "start-server-and-test start:frontend 3000 start:server 3000 cy:open"
@@ -28,7 +28,7 @@
   "license": "MIT",
   "homepage": "https://github.com/wlsf82/frontend-and-backend#readme",
   "devDependencies": {
-    "cypress": "^9.5.0",
-    "start-server-and-test": "^1.13.1"
+    "cypress": "^13.1.0",
+    "start-server-and-test": "^2.0.0"
   }
 }

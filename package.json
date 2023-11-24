@@ -28,7 +28,7 @@
   "license": "MIT",
   "homepage": "https://github.com/wlsf82/frontend-and-backend#readme",
   "devDependencies": {
-    "cypress": "^13.1.0",
-    "start-server-and-test": "^2.0.0"
+    "cypress": "^13.6.0",
+    "start-server-and-test": "^2.0.3"
   }
 }
